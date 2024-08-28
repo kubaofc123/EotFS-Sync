@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# Check if user_name.txt exists
+if [ ! -f "user_name.txt" ]; then
+    # Prompt user for their name
+    echo "Enter your name:"
+    read -r user_name
+
+    # Save the name to user_name.txt
+    echo "$user_name" > user_name.txt
+
+    echo "Name saved to user_name.txt"
+else
+    # Read the name from user_name.txt
+    user_name=$(<user_name.txt)
+fi
+
+cd ..
+
 while true; do
     # Perform git pull
     output=$(git pull)
