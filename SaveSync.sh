@@ -26,7 +26,7 @@ while true; do
         git commit -m "$username update"
         
         # Optionally push the changes to the remote repository
-        # git push
+        git push
         
         echo "Changes committed with message: '$username update'"
     fi
